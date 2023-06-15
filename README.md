@@ -1,9 +1,9 @@
 # mastermind
 Mastermind game 
 
-Generate a random 4-digit secret code between 1000 and 9999 with no repeating digits.
+Generate a random 4-digit secret code with every digit between 1-9 with no repeating digits.
 
-Prompt the player to enter a 4-digit guess.
+Initiate the game by explaining the rules and wait for the player to enter a 4-digit guess.
 
 Compare the player's guess to the secret code.
 
@@ -16,13 +16,16 @@ If the guess matches the secret code, print "You cracked the code!" and end the 
 
 If the player has guessed incorrectly 6 times, print "You ran out of guesses. The secret code was [secret code]". End the game.
 
-Otherwise, wait for player to enter another guess and repeat steps 3 through 6.
+Otherwise, wait for player to enter another guess and repeat the compare player guess, update green and yellow circles, check win
+
 //Try adding a check to make sure player entered 4 digits - does not have to be different digits.
 
-Once the game has ended, prompt the player if they want to play again.
+Once the game has ended, change th estart over button into play again button.
+Once play again button is clicked, change it to start over button.
+start over button initiates the game from the beginning
 
-If yes, generate a new random secret code with no repeating digits and start over at step 2.
-If no, end the program.
+
+
 To generate the random secret code:
   -Start with a blank code: 
   -For each digit, generate a random number between 1 and 9 that is not already in the code.
