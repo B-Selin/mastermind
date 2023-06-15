@@ -36,12 +36,12 @@ def generate_secret_code():
 code = ''
 used = []
 for i in range(4):
-# Generate random number between 1 and 9
+Generate random number between 1 and 9
 num = random.randint(1,9)
-# Keep generating until we find a unique number
+Keep generating until we find a unique number
 while num in used:
 num = random.randint(1,9)
-# Add number and mark as used
+Add number and mark as used
 code += str(num)
 used.append(num)
 return code
@@ -56,13 +56,16 @@ Compare the guess to the secret code and count matches
 def compare_and_count(guess, code):
 green = 0
 yellow = 0
-# Loop through each digit
+
+Loop through each digit
 for i in range(4):
 digit = str(guess[i])
-# Check for correct digit and position
+Check for correct digit and position
 if digit == code[i]:
 green += 1
-# Check for correct digit in wrong position
+
+
+Check for correct digit in wrong position
 elif digit in code:
 yellow += 1
 return green, yellow
