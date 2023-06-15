@@ -3,7 +3,8 @@ Mastermind game
 
 Generate a random 4-digit secret code with every digit between 1-9 with no repeating digits.
 
-Initiate the game by explaining the rules and wait for the player to enter a 4-digit guess.
+Initiate the game by explaining the rules and wait for the player to enter a 4-digit guess. 
+guesses will be linked like the connect 4 game c0r0 c0r1 c0r2c0r3 etc...
 
 Compare the player's guess to the secret code.
 
