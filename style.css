@@ -1,6 +1,6 @@
 .container {  display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr;
-  grid-template-rows: 0.3fr 0.4fr 2.3fr;
+  grid-template-rows: 0.3fr 0.5fr 2.2fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -34,20 +34,21 @@
   justify-items: center;
   align-items: center;
   grid-template-areas:
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". ."
-    ". .";
+    "c2r5 c3r5"
+    "c0r5 c1r5"
+    "c2r4 c3r4"
+    "c0r4 c1r4"
+    "c2r3 c3r3"
+    "c0r3 c1r3"
+    "c2r2 c3r2"
+    "c0r2 c1r2"
+    "c2r1 c3r1"
+    "c0r1 c1r1"
+    "c2r0 c3r0"
+    "c0r0 c1r0";
   grid-area: results;
 }
+
 
 .playerInput {  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -60,16 +61,18 @@
   justify-items: center;
   align-items: center;
   grid-template-areas:
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . .";
+    "guess61 guess62 guess63 guess64"
+    "guess51 guess52 guess53 guess54"
+    "guess41 guess42 guess43 guess44"
+    "guess31 guess32 guess33 guess34"
+    "guess21 guess22 guess23 guess24"
+    "guess11 guess12 guess13 guess14";
   grid-area: playerInput;
 }
 
-.Numbers {  display: grid;
+
+.numbers {  
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 1em 6em;
@@ -79,40 +82,22 @@
   justify-items: center;
   align-items: center;
   grid-template-areas:
-    "."
-    "."
-    "."
-    "."
-    "."
-    "."
-    "."
-    "."
-    ".";
+    "num9"
+    "num8"
+    "num7"
+    "num6"
+    "num5"
+    "num4"
+    "num3"
+    "num2"
+    "num1";
   grid-area: Numbers;
 }
+
 
 
 html, body , .container {
   height: 100%;
   margin: 0;
-}
-
-/* For presentation only, no need to copy the code below */
-
-.container * {
-  border: 1px solid red;
-  position: relative;
-}
-
-.container *:after {
-  content:attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  align-items: center;
-  justify-content: center;
 }
 
