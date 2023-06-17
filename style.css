@@ -1,4 +1,14 @@
-.container {  display: grid;
+
+html, body , .container {
+  height: 90%;
+  width: 80%;
+  margin: 0;
+}
+
+
+.container {  
+  background-color: #c2d4dd;
+  display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr;
   grid-template-rows: 0.3fr 0.5fr 2.2fr;
   gap: 0px 0px;
@@ -9,21 +19,24 @@
     "results playerInput Numbers";
 }
 
-.Button {
+.button {
   justify-self: center;
   align-self: center;
   grid-area: Button;
   width: 25%;
 }
 
-.Information {
+.information {
+  background-color: #eaece5;
   justify-self: center;
   align-self: center;
   grid-area: Information;
   width: 60%;
 }
 
-.results {  display: grid;
+.results {  
+  background-color: #b2c2bf;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
@@ -50,7 +63,9 @@
 }
 
 
-.playerInput {  display: grid;
+.playerInput {  
+  background-color: #b9b0b0;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: auto;
@@ -61,17 +76,20 @@
   justify-items: center;
   align-items: center;
   grid-template-areas:
-    "guess61 guess62 guess63 guess64"
-    "guess51 guess52 guess53 guess54"
-    "guess41 guess42 guess43 guess44"
-    "guess31 guess32 guess33 guess34"
-    "guess21 guess22 guess23 guess24"
-    "guess11 guess12 guess13 guess14";
+
+    "guess50" "guess51 guess52 guess53"
+    "guess40" "guess41 guess42 guess43"
+    "guess30" "guess31 guess32 guess33"
+    "guess20" "guess21 guess22 guess23"
+    "guess10" "guess11 guess12 guess13"
+    "guess00" "guess01 guess02 guess03"
+    ;
   grid-area: playerInput;
 }
 
 
 .numbers {  
+  background-color: #8ca3a3;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -95,9 +113,4 @@
 }
 
 
-
-html, body , .container {
-  height: 100%;
-  margin: 0;
-}
 
