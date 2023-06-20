@@ -18,12 +18,13 @@ let codeEl;
 let guessEl;
 let guessCountEl;
 let messageEl;
-let playAgainEl;
+let playAgainBtn;
 let resultEl; // Not sure if I will need this
 
 
 /*----- event listeners -----*/
-
+//An event listener for play again button to restart the game with init() function
+playAgainBtn.addEventListener('click', init );
 
 
 /*----- functions -----*/
@@ -54,10 +55,13 @@ function getPlayerGuess(){
 }
 
 function checkPlayerGuess(){
+  //
 
 }
 
 function getWinner(){
+  // If number of guesses reaches maxGuesses or player has no more guesses, player loses
+  // if matchesInPlace = length of the secret code, player has won
   if (matchesInPlace === secretCodeLength){
     winner = true;
   }
