@@ -5,45 +5,64 @@ const allGuesses = ['0','1','2','3','4','5','6','7','8','9'];
 
 /*----- state variables -----*/
 let board;
-let numGuesses;
+let numGuesses; // every 4 digit number that player enters is counts as 1 guess - goes from 0 to maxGuess
 let secretCode;
 let matchesInPlace;
 let matchesNotInPlace;
-let playerGuess;
+let playerGuess; //
+let guessCount; // every selection/click player does within their 4 digit guess - goes from 0 to 3
 let continuePlaying;
 let winner;
 let usedNumbers;
 
 /*----- cached elements  -----*/
-let codeEl;
-let guessEl;
-let guessCountEl;
-const infoEl = document.querySelector('info');
-const playAgainBtn = document.querySelector('button');
+// let codeEl; //I dont remember what I was thinking when I wrote this.
+const guessEl = document.querySelector('.numbers');
+
+const infoEl = document.querySelector('.info');
+const playAgainBtn = document.querySelector('.button');
 let resultEl; // Not sure if I will need this
 
 /*----- event listeners -----*/
 //An event listener for play again button to restart the game with init() function
 playAgainBtn.addEventListener('click', init); //provide the function, do not invoke the function
 
-//An event listener to get player guess
-guessEl.addEventListener('click', handleDrop)
-
+//Add event listener to get player guess
+guessEl.addEventListener('click', handleGuess);
+console.log()
 /*----- functions -----*/
 init();//invoke init function to start the game
 
 //I try to not hardcode stuff, but the board -hence the number of max guesses- is hardcoded here. I will deal with this later if I'm done early.
-// OR, can I create the board like this : board [ [] * maxGuess + 1 ]
+// OR, can I create the board like this : board [ [] * maxGuess + 1 ]? 
 function init(){
-  board = [ [] * maxGuess+1];
+  board = [ [] , [] , [] , [], [], []];
   winner = false;
   numGuesses = 0;
   matchesInPlace = 0;
   matchesNotInPlace = 0;
+  guessCount = 0;
   continuePlaying = true;
   usedNumbers = [];
   render();
 }
+
+function handleGuess(event){
+  //Get player guess from the clicked elemnt
+  playerGuess = event.target.textContent;
+  console.log(playerGuess)
+  if (usedNumbers.indexof(playerGuess) < 0){
+
+    //push it in the array
+    usedNumbers.push[playerGuess];
+    //increase count of numbers clicked.
+    guessCount +=1;  
+
+    render();
+  }
+
+}
+
 
 function generateSecretCode(){
   // secret code is initially equals to an empty array
@@ -59,9 +78,6 @@ function generateSecretCode(){
 
 }
 
-function getPlayerGuess(){
-
-}
 
 function checkPlayerGuess(){
 
@@ -77,11 +93,15 @@ function getWinner(){
   }
 }
 function render(){
-  //render board
+  renderboard();
   //render information
   //render diamonds - this is optional at this point
 
 }
+
+function renderboard(){
+  board[guessCount][numGuesses] = playerGuess
+};
 function playAgain(){
 
 }

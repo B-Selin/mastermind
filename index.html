@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -11,74 +12,74 @@
     <div class="button"> START OVER / REPLAY</div>
     <div class="information"> The computer will select a secret number with FOUR different (unique) digits. The object of the game is to guess that secret number. Each guess is answered by the number of digits in the guess number that match or occur in the secret number. You will also be told how many of the digits are in the correct position in the secret number.</div>
     <div class="results">
-      <div class = "diamond" id ="c0r0"></div>
-      <div class = "diamond" id ="c1r0"></div>
-      <div class = "diamond" id ="c2r0"></div>
-      <div class = "diamond" id ="c3r0"></div>
-      <div class = "diamond" id ="c0r1"></div>
-      <div class = "diamond" id ="c1r1"></div>
-      <div class = "diamond" id ="c2r1"></div>
-      <div class = "diamond" id ="c3r1"></div>
-      <div class = "diamond" id ="c0r2"></div>
-      <div class = "diamond" id ="c1r2"></div>
-      <div class = "diamond" id ="c2r2"></div>
-      <div class = "diamond" id ="c3r2"></div>
-      <div class = "diamond" id ="c0r3"></div>
-      <div class = "diamond" id ="c1r3"></div>
-      <div class = "diamond" id ="c2r3"></div>
-      <div class = "diamond" id ="c3r3"></div>
-      <div class = "diamond" id ="c0r4"></div>
-      <div class = "diamond" id ="c1r4"></div>
-      <div class = "diamond" id ="c2r4"></div>
-      <div class = "diamond" id ="c3r4"></div>
-      <div class = "diamond" id ="c0r5"></div>
-      <div class = "diamond" id ="c1r5"></div>
-      <div class = "diamond" id ="c2r5"></div>
-      <div class = "diamond" id ="c3r5"></div>
+      <div class="diamond" id="c0r0"></div>
+      <div class="diamond" id="c1r0"></div>
+      <div class="diamond" id="c2r0"></div>
+      <div class="diamond" id="c3r0"></div>
+      <div class="diamond" id="c0r1"></div>
+      <div class="diamond" id="c1r1"></div>
+      <div class="diamond" id="c2r1"></div>
+      <div class="diamond" id="c3r1"></div>
+      <div class="diamond" id="c0r2"></div>
+      <div class="diamond" id="c1r2"></div>
+      <div class="diamond" id="c2r2"></div>
+      <div class="diamond" id="c3r2"></div>
+      <div class="diamond" id="c0r3"></div>
+      <div class="diamond" id="c1r3"></div>
+      <div class="diamond" id="c2r3"></div>
+      <div class="diamond" id="c3r3"></div>
+      <div class="diamond" id="c0r4"></div>
+      <div class="diamond" id="c1r4"></div>
+      <div class="diamond" id="c2r4"></div>
+      <div class="diamond" id="c3r4"></div>
+      <div class="diamond" id="c0r5"></div>
+      <div class="diamond" id="c1r5"></div>
+      <div class="diamond" id="c2r5"></div>
+      <div class="diamond" id="c3r5"></div>
     </div>
     <div class="playerInput">
-      <div class="circle" id = "guess00"></div>
-      <div class="circle" id = "guess01"></div>
-      <div class="circle" id = "guess02"></div>
-      <div class="circle" id = "guess03"></div>
+      <div class="circle" id="guess00"></div>
+      <div class="circle" id="guess01"></div>
+      <div class="circle" id="guess02"></div>
+      <div class="circle" id="guess03"></div>
 
-      <div class="circle" id = "guess10"></div>
-      <div class="circle" id = "guess11"></div>
-      <div class="circle" id = "guess12"></div>
-      <div class="circle" id = "guess13"></div>
+      <div class="circle" id="guess10"></div>
+      <div class="circle" id="guess11"></div>
+      <div class="circle" id="guess12"></div>
+      <div class="circle" id="guess13"></div>
 
-      <div class="circle" id = "guess20"></div>
-      <div class="circle" id = "guess21"></div>
-      <div class="circle" id = "guess22"></div>
-      <div class="circle" id = "guess23"></div>
+      <div class="circle" id="guess20"></div>
+      <div class="circle" id="guess21"></div>
+      <div class="circle" id="guess22"></div>
+      <div class="circle" id="guess23"></div>
 
-      <div class="circle" id = "guess30"></div>
-      <div class="circle" id = "guess31"></div>
-      <div class="circle" id = "guess32"></div>
-      <div class="circle" id = "guess33"></div>
+      <div class="circle" id="guess30"></div>
+      <div class="circle" id="guess31"></div>
+      <div class="circle" id="guess32"></div>
+      <div class="circle" id="guess33"></div>
 
-      <div class="circle" id = "guess40"></div>
-      <div class="circle" id = "guess41"></div>
-      <div class="circle" id = "guess42"></div>
-      <div class="circle" id = "guess43"></div>
+      <div class="circle" id="guess40"></div>
+      <div class="circle" id="guess41"></div>
+      <div class="circle" id="guess42"></div>
+      <div class="circle" id="guess43"></div>
 
-      <div class="circle" id = "guess50"></div>
-      <div class="circle" id = "guess51"></div>
-      <div class="circle" id = "guess52"></div>
-      <div class="circle" id = "guess53"></div>
+      <div class="circle" id="guess50"></div>
+      <div class="circle" id="guess51"></div>
+      <div class="circle" id="guess52"></div>
+      <div class="circle" id="guess53"></div>
     
 
     </div>
     <div class="numbers">
-      <div class="numberCircle" id = "num1">1</div>
-      <div class="numberCircle" id = "num2">2</div>
-      <div class="numberCircle" id = "num3">3</div>
-      <div class="numberCircle" id = "num4">4</div>
-      <div class="numberCircle" id = "num5">5</div>
-      <div class="numberCircle" id = "num6">6</div>
-      <div class="numberCircle" id = "num7">7</div>
-      <div class="numberCircle" id = "num8">8</div>
-      <div class="numberCircle" id = "num9">9</div>
+      <div class="numberCircle" id="num1">1</div>
+      <div class="numberCircle" id="num2">2</div>
+      <div class="numberCircle" id="num3">3</div>
+      <div class="numberCircle" id="num4">4</div>
+      <div class="numberCircle" id="num5">5</div>
+      <div class="numberCircle" id="num6">6</div>
+      <div class="numberCircle" id="num7">7</div>
+      <div class="numberCircle" id="num8">8</div>
+      <div class="numberCircle" id="num9">9</div>
     </div>
   </div>
 
