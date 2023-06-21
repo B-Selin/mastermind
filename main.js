@@ -7,8 +7,8 @@ const allGuesses = ['0','1','2','3','4','5','6','7','8','9'];
 let board;
 let numGuesses; // every 4 digit number that player enters is counts as 1 guess - goes from 0 to maxGuess - represents rows
 let secretCode=[]; 
-let matchesInPlace; //digits that are right and in the right place
-let matchesNotInPlace; //digits that are right but not in the right place
+let matchesInPlace = 0; //digits that are right and in the right place
+let matchesNotInPlace = 0; //digits that are right but not in the right place
 let playerGuess; // one digit number that player clicks on
 let guessCount; // every selection/click player does within their 4 digit guess - goes from 0 to 3 - represents columns
 let continuePlaying;
@@ -29,8 +29,6 @@ playAgainBtn.addEventListener('click', init); //provide the function, do not inv
 
 //Add event listener to get player guess
 guessEl.addEventListener('click', handleGuess);
-console.log()
-
 
 /*----- functions -----*/
 init();//invoke init function to start the game
@@ -38,11 +36,8 @@ init();//invoke init function to start the game
 //I try to not hardcode stuff, but the board -hence the number of max guesses- is hardcoded here. I will deal with this later if I'm done early.
 // OR, can I create the board like this : board [ [] * maxGuess + 1 ]? 
 function init(){
-  board = [ [] , [] , [] , [], [], []];
   winner = false;
   numGuesses = 0;
-  matchesInPlace = 0;
-  matchesNotInPlace = 0;
   guessCount = 0;
   continuePlaying = true;
   usedNumbers = [];
@@ -53,7 +48,7 @@ function init(){
 function handleGuess(event){
   //Get player guess from the clicked elemnt
   playerGuess = event.target.innerText;
-  if (!usedNumbers.includes(playerGuess)){
+  if (!usedNumbers.includes(parseInt(playerGuess))){
     //push it in the array
     //had to push as integer, otherwise checkPlayerGuess function does not work comparing an int and str
     usedNumbers.push(parseInt(playerGuess));
@@ -102,7 +97,7 @@ function checkPlayerGuess(){
   matchesNotInPlace = 0;
   matchesInPlace = 0;
   for (let i = 0; i < secretCode.length; i++) {
-    console.log(usedNumbers, secretCode)
+    // console.log(usedNumbers, secretCode)
     if(secretCode.includes(usedNumbers[i])){
       matchesNotInPlace++;
     }
@@ -124,6 +119,7 @@ function checkPlayerGuess(){
   if (numGuesses === maxGuess){
       continuePlaying = false;
   }
+  renderInformation() //honestly I couldnt find a way to change the info board
 }
 
 function getWinner(){
@@ -154,19 +150,18 @@ function renderBoard(){
   }
 };
 
-// function renderInformation(){
-//   //if winner than return you cracked the code!!
-//   if(winner) infoEl.innerText = "You Cracked the Code!";    
+function renderInformation(){
+  if (usedNumbers.length === secretCodeLength) {
+    //change the information on the board to match the outcome of matchesInPlace and MatchesNotInPlace. your code has "matchesInthePlace" correct digits in the right place and "matchesNotinPlace" correct digits in the wrong place.
 
-//   // if continuePlaying is false, player ran out of guesses
-//   else if(!continuePlaying) infoEl.innerText = 'You Ran Out Of Guesses';
+    infoEl.innerHTML = `${matchesInPlace} Correct! ${matchesNotInPlace} Almost There.`;
+    // console.log(matchesInPlace, matchesNotInPlace)
+  }
+  //if winner than return you cracked the code!!
+  if(winner) infoEl.innerText = 'You Cracked the Code!';    
 
-//   //change the information on the board to match the outcome of matchesInPlace and MatchesNotInPlace. your code has "matchesInthePlace" correct digits in the right place and "matchesNotinPlace" correct digits in the wrong place
-//   infoEl.innerText = `${matchesInPlace} Correct! ${matchesNotInPlace} Almost There.`;
+  // if continuePlaying is false, player ran out of guesses
+  else if(!continuePlaying) infoEl.innerText = 'You Ran Out Of Guesses';
   
-// }
-
-function playAgain(){
-  init(); 
-};
+}
 
