@@ -55,7 +55,8 @@ function handleGuess(event){
   playerGuess = event.target.innerText;
   if (!usedNumbers.includes(playerGuess)){
     //push it in the array
-    usedNumbers.push(playerGuess);
+    //had to push as integer, otherwise checkPlayerGuess function does not work comparing an int and str
+    usedNumbers.push(parseInt(playerGuess));
     //increase the guessCount
     render();
     guessCount +=1;
@@ -98,15 +99,20 @@ function checkPlayerGuess(){
   /*Check if the player guess is in the secret code, if yes, increase the matchesNotInPlace count
   then check if the exact secretcode[i] matches the usedNumbers[i] increase matchesInPlace count and 
   decrease the matchesNotInPlace respectively*/
-
+  matchesNotInPlace = 0;
+  matchesInPlace = 0;
   for (let i = 0; i < secretCode.length; i++) {
+    console.log(usedNumbers, secretCode)
     if(secretCode.includes(usedNumbers[i])){
-      console.log(usedNumbers[i]);
       matchesNotInPlace++;
     }
-    console.log(matchesNotInPlace);
+    if(usedNumbers[i] === secretCode[i]){
+      matchesInPlace++;
+      matchesNotInPlace--;
+    }
   }
 
+  console.log(matchesNotInPlace, matchesInPlace);
   
   //Check if player has won 
   if (matchesInPlace === secretCodeLength){
@@ -126,12 +132,13 @@ function getWinner(){
   if (matchesInPlace === secretCodeLength){
     winner = true;
     //switch button text from 'start over' to 'play again'
-
   }
 }
+
+
 function render(){
   renderBoard();
-  // renderInformation();
+  renderInformation();
   //renderDiamonds();
 
 }
