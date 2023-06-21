@@ -22,7 +22,6 @@ const infoEl = document.querySelector('info');
 const playAgainBtn = document.querySelector('button');
 let resultEl; // Not sure if I will need this
 
-
 /*----- event listeners -----*/
 //An event listener for play again button to restart the game with init() function
 playAgainBtn.addEventListener('click', init); //provide the function, do not invoke the function
@@ -33,15 +32,10 @@ guessEl.addEventListener('click', handleDrop)
 /*----- functions -----*/
 init();//invoke init function to start the game
 
+//I try to not hardcode stuff, but the board -hence the number of max guesses- is hardcoded here. I will deal with this later if I'm done early.
+// OR, can I create the board like this : board [ [] * maxGuess + 1 ]
 function init(){
-  board = [
-    [],
-    [],
-    [],
-    [],
-    [],
-    []
-  ];
+  board = [ [] * maxGuess+1];
   winner = false;
   numGuesses = 0;
   matchesInPlace = 0;
@@ -51,13 +45,11 @@ function init(){
   render();
 }
 
-
-
 function generateSecretCode(){
   // secret code is initially equals to an empty array
   secretCode = [];
 
-  //I dod not hardcoded length of the secret code & possible guesses
+  //I did not hardcode length of the secret code & possible guesses, but now I realise it is hardcoded in the constants. 
   for (let i = 0; i < secretCodeLength; i++) { 
     // generate a random number from 0 - 9
     let randomIdx = Math.floor(Math.random() * allGuesses.length);
@@ -80,6 +72,8 @@ function getWinner(){
   // if matchesInPlace = length of the secret code, player has won
   if (matchesInPlace === secretCodeLength){
     winner = true;
+    //switch button text from 'start over' to 'play again'
+
   }
 }
 function render(){
