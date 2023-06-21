@@ -1,7 +1,7 @@
 
 html, body, .container {
   height: 90%;
-  width: 80%;
+  width: revert;
   margin: 0;
 }
 
@@ -119,7 +119,7 @@ html, body, .container {
 }
 
 .circle {
-  border: 1rem solid #484f4f;
+  border: 2rem solid #484f4f;
   font-size: 2rem;
   font-weight: bold;
   color: #f0f0f0;
@@ -144,19 +144,19 @@ html, body, .container {
   width: 0;
 	height: 0;
 
-	border: 1.5rem solid transparent;
-	border-bottom: 1.5rem solid #103252;
+	border: 1rem solid transparent;
+	border-bottom: 1rem solid #103252;
 	position: relative;
-	top: -1.5rem;
+	top: -1rem;
 }
 .diamond:after {
 	content: '';
 	position: absolute;
-	left: -1.5em; 
-	top: 1.5rem;
+	left: -1em; 
+	top: 1rem;
 	width: 0;
 	height: 0;
-	border: 1.5rem solid transparent;
-	border-top: 1.5rem solid #103252;
+	border: 1rem solid transparent;
+	border-top: 1rem solid #103252;
 }
 

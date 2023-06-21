@@ -4,7 +4,7 @@ const secretCodeLength = 4;
 const allGuesses = ['0','1','2','3','4','5','6','7','8','9'];
 
 /*----- state variables -----*/
-let board;
+
 let numGuesses; // every 4 digit number that player enters is counts as 1 guess - goes from 0 to maxGuess - represents rows
 let secretCode=[]; 
 let matchesInPlace = 0; //digits that are right and in the right place
@@ -16,12 +16,11 @@ let winner;
 let usedNumbers; //empty array to keep track of playerGuess, to prevent selecting same number
 
 /*----- cached elements  -----*/
-// let codeEl; //I dont remember what I was thinking when I wrote this.
-const guessEl = document.querySelector('.numbers');
 
+const guessEl = document.querySelector('.numbers');
 const infoEl = document.querySelector('.information');
 const playAgainBtn = document.querySelector('.button');
-let resultEl; // Not sure if I will need this
+
 
 /*----- event listeners -----*/
 //An event listener for play again button to restart the game with init() function
@@ -48,7 +47,8 @@ function init(){
 function handleGuess(event){
   //Get player guess from the clicked elemnt
   playerGuess = event.target.innerText;
-  if (!usedNumbers.includes(parseInt(playerGuess))){
+  
+  if (!usedNumbers.includes(parseInt(playerGuess)) && playerGuess.length === 1){
     //push it in the array
     //had to push as integer, otherwise checkPlayerGuess function does not work comparing an int and str
     usedNumbers.push(parseInt(playerGuess));
@@ -113,7 +113,7 @@ function checkPlayerGuess(){
   if (matchesInPlace === secretCodeLength){
      winner = true;  
      //switch button text from 'start over' to 'play again'
-     playAgainBtn.innerText = 'Play Again';               
+     playAgainBtn.innerText = 'Play Again?';               
   }
   //Check if player has ran out of guesses   
   if (numGuesses === maxGuess){
@@ -136,7 +136,7 @@ function render(){
   renderBoard();
   renderInformation();
   //renderDiamonds();
-
+  
 }
 
 function renderBoard(){
@@ -154,7 +154,7 @@ function renderInformation(){
   if (usedNumbers.length === secretCodeLength) {
     //change the information on the board to match the outcome of matchesInPlace and MatchesNotInPlace. your code has "matchesInthePlace" correct digits in the right place and "matchesNotinPlace" correct digits in the wrong place.
 
-    infoEl.innerHTML = `${matchesInPlace} Correct! ${matchesNotInPlace} Almost There.`;
+    infoEl.innerHTML = `${matchesInPlace} digits are at home! ${matchesNotInPlace} digits are on their way!!`;
     // console.log(matchesInPlace, matchesNotInPlace)
   }
   //if winner than return you cracked the code!!
