@@ -19,7 +19,7 @@ let usedNumbers;
 // let codeEl; //I dont remember what I was thinking when I wrote this.
 const guessEl = document.querySelector('.numbers');
 
-const infoEl = document.querySelector('.info');
+const infoEl = document.querySelector('.information');
 const playAgainBtn = document.querySelector('.button');
 let resultEl; // Not sure if I will need this
 
@@ -30,6 +30,8 @@ playAgainBtn.addEventListener('click', init); //provide the function, do not inv
 //Add event listener to get player guess
 guessEl.addEventListener('click', handleGuess);
 console.log()
+
+
 /*----- functions -----*/
 init();//invoke init function to start the game
 
@@ -54,11 +56,20 @@ function handleGuess(event){
   if (!usedNumbers.includes(playerGuess)){
     //push it in the array
     usedNumbers.push(playerGuess);
-
     //increase the guessCount
-    guessCount +=1;  
+    render();
+
+    guessCount +=1;
+    // when guess count is 3 or usedNumber.length reaches secretCodeLength, reset the guessCount and increase numGuesses
+    if(usedNumbers.length === secretCodeLength){
+      guessCount = 0;
+      numGuesses++;
+      usedNumbers = [];
+      checkPlayerGuess();    
+    }
+
   }
-  render();
+
 }
 
 
@@ -75,9 +86,30 @@ function generateSecretCode(){
   }
 }
 
-
 function checkPlayerGuess(){
-
+  //Check if the player guess is in the secret code, if yes, increase the matchesNotInPlace count
+  //then check if the exact secretcode[i] matches the usedNumbers[i] increase matchesInPlace count and decrease the matchesNotInPlace respectively
+  for (let i = 0; i < secretCode.length; i++) {
+    if(usedNumbers.includes(secretCode[i])){
+     matchesNotInPlace++;
+    }
+  }
+  for(let i = 0; i < secretCode.length; i++){
+    if(secretCode[i] === usedNumbers[i]){
+      matchesInPlace++;
+      matchesNotInPlace--;        
+    }
+  }
+  //Check if player has won 
+   if (matchesInPlace === secretCodeLength){
+     winner = true;  
+     //switch button text from 'start over' to 'play again'
+     playAgainBtn.innerText = 'Play Again';               
+   }
+  //Check if player has ran out of guesses   
+   if (numGuesses === maxGuess){
+      continuePlaying = false;
+   }
 }
 
 function getWinner(){
@@ -90,22 +122,36 @@ function getWinner(){
   }
 }
 function render(){
-  renderboard();
-  //render information
-  //render diamonds - this is optional at this point
+  renderBoard();
+  // renderInformation();
+  //renderDiamonds();
 
 }
 
-function renderboard(){
+function renderBoard(){
   // define a guessIdx element and assign it to the last played numGuesses and guessCount
-  let guessIdx = `guess${numGuesses}${guessCount}`;
-  console.log(playerGuess);
-  console.log(guessIdx);
-  // get the element with the id of guessIdx from the html and assign its innerText to playerGuess
-  document.getElementById(guessIdx).innerText = playerGuess;
+  if(playerGuess){
+    let guessIdx = `guess${numGuesses}${guessCount}`;
+    console.log(playerGuess);
+    console.log(guessIdx);
+    // get the element with the id of guessIdx from the html and assign its innerText to playerGuess
+    document.getElementById(guessIdx).innerText = playerGuess;
+  }
 };
 
-function playAgain(){
+// function renderInformation(){
+//   //if winner than return you cracked the code!!
+//   if(winner) infoEl.innerText = "You Cracked the Code!";    
 
-}
+//   // if continuePlaying is false, player ran out of guesses
+//   else if(!continuePlaying) infoEl.innerText = 'You Ran Out Of Guesses';
+
+//   //change the information on the board to match the outcome of matchesInPlace and MatchesNotInPlace. your code has "matchesInthePlace" correct digits in the right place and "matchesNotinPlace" correct digits in the wrong place
+//   infoEl.innerText = `${matchesInPlace} Correct! ${matchesNotInPlace} Almost There.`;
+  
+// }
+
+function playAgain(){
+  init(); 
+};
 
