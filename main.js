@@ -5,12 +5,12 @@ const allGuesses = ['0','1','2','3','4','5','6','7','8','9'];
 
 /*----- state variables -----*/
 let board;
-let numGuesses; // every 4 digit number that player enters is counts as 1 guess - goes from 0 to maxGuess
-let secretCode;
+let numGuesses; // every 4 digit number that player enters is counts as 1 guess - goes from 0 to maxGuess - represents rows
+let secretCode=[];
 let matchesInPlace;
 let matchesNotInPlace;
 let playerGuess; //
-let guessCount; // every selection/click player does within their 4 digit guess - goes from 0 to 3
+let guessCount; // every selection/click player does within their 4 digit guess - goes from 0 to 3 - represents columns
 let continuePlaying;
 let winner;
 let usedNumbers;
@@ -44,38 +44,35 @@ function init(){
   guessCount = 0;
   continuePlaying = true;
   usedNumbers = [];
+  generateSecretCode();
   render();
 }
 
 function handleGuess(event){
   //Get player guess from the clicked elemnt
-  playerGuess = event.target.textContent;
-  console.log(playerGuess)
-  if (usedNumbers.indexof(playerGuess) < 0){
-
+  playerGuess = event.target.innerText;
+  if (!usedNumbers.includes(playerGuess)){
     //push it in the array
-    usedNumbers.push[playerGuess];
-    //increase count of numbers clicked.
+    usedNumbers.push(playerGuess);
+
+    //increase the guessCount
     guessCount +=1;  
-
-    render();
   }
-
+  render();
 }
 
 
 function generateSecretCode(){
   // secret code is initially equals to an empty array
-  secretCode = [];
-
   //I did not hardcode length of the secret code & possible guesses, but now I realise it is hardcoded in the constants. 
-  for (let i = 0; i < secretCodeLength; i++) { 
+  for (let i = 0; i <= secretCodeLength; i++) { 
     // generate a random number from 0 - 9
     let randomIdx = Math.floor(Math.random() * allGuesses.length);
-    //Push four random numbers to the empty array
-    secretCode.push(allGuesses[randomIdx]);
+    //Push four random numbers to the empty array, if that number is not already in the secretcode
+    if(!secretCode.includes(randomIdx)){
+      secretCode.push(randomIdx);
+    }
   }
-
 }
 
 
@@ -100,8 +97,14 @@ function render(){
 }
 
 function renderboard(){
-  board[guessCount][numGuesses] = playerGuess
+  // define a guessIdx element and assign it to the last played numGuesses and guessCount
+  let guessIdx = `guess${numGuesses}${guessCount}`;
+  console.log(playerGuess);
+  console.log(guessIdx);
+  // get the element with the id of guessIdx from the html and assign its innerText to playerGuess
+  document.getElementById(guessIdx).innerText = playerGuess;
 };
+
 function playAgain(){
 
 }
