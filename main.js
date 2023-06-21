@@ -74,32 +74,45 @@ function handleGuess(event){
 
 
 function generateSecretCode(){
+
+  /* now, if the random number is already in the secretCode, the i does increase but the secret number does not, 
+  so the for loop runs maybe 4 times but I may end up with 2 or 3 digit code. 
+  I will try decrease i, 
+  because I think i incrementation happens before anyother stuff happening inside the for loop*/
+
   // secret code is initially equals to an empty array
   //I did not hardcode length of the secret code & possible guesses, but now I realise it is hardcoded in the constants. 
-  for (let i = 0; i <= secretCodeLength; i++) { 
+
+  for (let i = 0; i < secretCodeLength; i++) { 
     // generate a random number from 0 - 9
     let randomIdx = Math.floor(Math.random() * allGuesses.length);
     //Push four random numbers to the empty array, if that number is not already in the secretcode
+
     if(!secretCode.includes(randomIdx)){
       secretCode.push(randomIdx);
+    } else {
+      i--;
     }
+    console.log(secretCode)
   }
 }
 
 function checkPlayerGuess(){
   //Check if the player guess is in the secret code, if yes, increase the matchesNotInPlace count
   //then check if the exact secretcode[i] matches the usedNumbers[i] increase matchesInPlace count and decrease the matchesNotInPlace respectively
+  
   for (let i = 0; i < secretCode.length; i++) {
-    if(usedNumbers.includes(secretCode[i])){
+    if(secretCode.includes(usedNumbers[i])){
      matchesNotInPlace++;
     }
-  }
-  for(let i = 0; i < secretCode.length; i++){
     if(secretCode[i] === usedNumbers[i]){
       matchesInPlace++;
       matchesNotInPlace--;        
     }
+    console.log(matchesInPlace, matchesNotInPlace);
   }
+
+  
   //Check if player has won 
    if (matchesInPlace === secretCodeLength){
      winner = true;  
