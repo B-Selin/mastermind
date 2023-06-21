@@ -58,18 +58,17 @@ function handleGuess(event){
     usedNumbers.push(playerGuess);
     //increase the guessCount
     render();
-
     guessCount +=1;
     // when guess count is 3 or usedNumber.length reaches secretCodeLength, reset the guessCount and increase numGuesses
     if(usedNumbers.length === secretCodeLength){
+      checkPlayerGuess();
       guessCount = 0;
       numGuesses++;
       usedNumbers = [];
-      checkPlayerGuess();    
+
     }
 
   }
-
 }
 
 
@@ -98,31 +97,29 @@ function generateSecretCode(){
 }
 
 function checkPlayerGuess(){
-  //Check if the player guess is in the secret code, if yes, increase the matchesNotInPlace count
-  //then check if the exact secretcode[i] matches the usedNumbers[i] increase matchesInPlace count and decrease the matchesNotInPlace respectively
-  
+  /*Check if the player guess is in the secret code, if yes, increase the matchesNotInPlace count
+  then check if the exact secretcode[i] matches the usedNumbers[i] increase matchesInPlace count and 
+  decrease the matchesNotInPlace respectively*/
+
   for (let i = 0; i < secretCode.length; i++) {
     if(secretCode.includes(usedNumbers[i])){
-     matchesNotInPlace++;
+      console.log(usedNumbers[i]);
+      matchesNotInPlace++;
     }
-    if(secretCode[i] === usedNumbers[i]){
-      matchesInPlace++;
-      matchesNotInPlace--;        
-    }
-    console.log(matchesInPlace, matchesNotInPlace);
+    console.log(matchesNotInPlace);
   }
 
   
   //Check if player has won 
-   if (matchesInPlace === secretCodeLength){
+  if (matchesInPlace === secretCodeLength){
      winner = true;  
      //switch button text from 'start over' to 'play again'
      playAgainBtn.innerText = 'Play Again';               
-   }
+  }
   //Check if player has ran out of guesses   
-   if (numGuesses === maxGuess){
+  if (numGuesses === maxGuess){
       continuePlaying = false;
-   }
+  }
 }
 
 function getWinner(){

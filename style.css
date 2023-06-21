@@ -98,7 +98,7 @@ html, body , .container {
   font-size: xx-large;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0.5em 1em;
   grid-auto-flow: row;
   justify-content: center;
@@ -114,7 +114,8 @@ html, body , .container {
     "num4"
     "num3"
     "num2"
-    "num1";
+    "num1"
+    "num0";
   grid-area: Numbers;
 }
 
