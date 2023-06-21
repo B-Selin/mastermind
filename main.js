@@ -6,14 +6,14 @@ const allGuesses = ['0','1','2','3','4','5','6','7','8','9'];
 /*----- state variables -----*/
 let board;
 let numGuesses; // every 4 digit number that player enters is counts as 1 guess - goes from 0 to maxGuess - represents rows
-let secretCode=[];
-let matchesInPlace;
-let matchesNotInPlace;
-let playerGuess; //
+let secretCode=[]; 
+let matchesInPlace; //digits that are right and in the right place
+let matchesNotInPlace; //digits that are right but not in the right place
+let playerGuess; // one digit number that player clicks on
 let guessCount; // every selection/click player does within their 4 digit guess - goes from 0 to 3 - represents columns
 let continuePlaying;
 let winner;
-let usedNumbers;
+let usedNumbers; //empty array to keep track of playerGuess, to prevent selecting same number
 
 /*----- cached elements  -----*/
 // let codeEl; //I dont remember what I was thinking when I wrote this.
@@ -65,9 +65,7 @@ function handleGuess(event){
       guessCount = 0;
       numGuesses++;
       usedNumbers = [];
-
     }
-
   }
 }
 
