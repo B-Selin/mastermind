@@ -3,11 +3,14 @@ html, body, .container {
   height: 90%;
   width: revert;
   margin: 0;
+  font-family: 'Indie Flower', cursive;
+  font-weight:bolder;
+  color: #4f000b;
 }
 
 
 .container {  
-  background-color: #c2d4dd;
+  background-color: #d6c7df;
   display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr;
   grid-template-rows: 0.3fr 0.5fr 2.2fr;
@@ -21,23 +24,46 @@ html, body, .container {
 
 .button {
   justify-self: center;
+  text-align: center;
   align-self: center;
+  align-content: center;
   grid-area: Button;
+  box-shadow: #4f000b;
   width: 25%;
+  font-size: x-large;
+  border-radius: 5px;
+  box-shadow:inset 4px 4px 4px 4px rgba(255,255,255,.5);
+  transition: all 0.3s ease;
+}
+.button:hover {
+  color: #000;
+}
+.button:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.button:active {
+  top: 2px;
 }
 
 .information {
-  background-color: #eaece5;
+  background-color: #d8c8ea;
   justify-self: center;
-  text-justify:inter-ideograph;
+  text-align: center;
   align-self: center;
   grid-area: Information;
   width: 60%;
+  height: 70%;
+  font-size: x-large;
+
+  border-radius: 5px;
+  box-shadow:inset 4px 4px 4px 4px rgba(255,255,255,.5);
 }
 
 .results {  
 
-  background-color: #b2c2bf;
+  background-color: #ffcad4;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -48,6 +74,7 @@ html, body, .container {
   align-content: space-around;
   justify-items: center;
   align-items: center;
+  box-shadow:inset 2px 2px 2px 2px rgba(255,255,255,.5);
   grid-template-areas:
     "c2r5 c3r5"
     "c0r5 c1r5"
@@ -67,7 +94,7 @@ html, body, .container {
 
 .playerInput {  
 
-  background-color: #b9b0b0;
+  background-color: #ffafcc;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -76,8 +103,7 @@ html, body, .container {
   grid-auto-flow: row;
   justify-content: center;
   align-content: center;
-  justify-items: center;
-  align-items: center;
+  box-shadow:inset 2px 2px 2px 2px rgba(255,255,255,.5);
   grid-template-areas:
 
     "guess50" "guess51 guess52 guess53"
@@ -92,7 +118,7 @@ html, body, .container {
 
 
 .numbers {  
-  background-color: #8ca3a3;
+  background-color: #ffcad4;
   text-align: center;
   font-size: xx-large;
   display: grid;
@@ -104,6 +130,7 @@ html, body, .container {
   align-content: center;
   justify-items: center;
   align-items: center;
+  box-shadow:inset 2px 2px 2px 2px rgba(255,255,255,.5);
   grid-template-areas:
     "num9"
     "num8"
@@ -119,24 +146,26 @@ html, body, .container {
 }
 
 .circle {
-  border: 2rem solid #484f4f;
+  border: 1.5rem solid #f8edeb;
   font-size: 2rem;
-  font-weight: bold;
-  color: #f0f0f0;
+  font-weight: bolder;
+  color: #a4133c;
   text-align: center;
   justify-items: center;
-  background-color: #475353;
-  border-color: #475353;
+  background-color: #f8edeb;
+  border-color: #f8edeb;
+  box-shadow:inset 2px 2px 2px 2px rgba(255,255,255,.5);
   border-radius: 50%;
 }
 
 .numberCircle {
   border: 1.5px solid black;
   background-color: #f0f0f0;
-  width: 2.5rem;
+  width: 2rem;
   height: 2.5rem;
   text-align: center;
   justify-items: center;
+  box-shadow:inset 2px 2px 2px 2px rgba(255,255,255,.5);
   border-radius: 50%;
 }
 
@@ -145,7 +174,7 @@ html, body, .container {
 	height: 0;
 
 	border: 1rem solid transparent;
-	border-bottom: 1rem solid #103252;
+	border-bottom: 1rem solid #f0f0f0;
 	position: relative;
 	top: -1rem;
 }
@@ -157,6 +186,6 @@ html, body, .container {
 	width: 0;
 	height: 0;
 	border: 1rem solid transparent;
-	border-top: 1rem solid #103252;
+	border-top: 1rem solid #f0f0f0;
 }
 
