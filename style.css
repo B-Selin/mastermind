@@ -1,7 +1,7 @@
 
-html, body, .container {
+html, body {
   height: 90%;
-  width: 80%;
+
   margin: 0;
   font-family: 'Indie Flower', cursive;
   font-weight:bolder;
@@ -11,10 +11,14 @@ html, body, .container {
 
 .container {  
   background-color: #d6c7df;
+  height: 90%;
+
   display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr;
   grid-template-rows: 0.3fr 0.5fr 2.2fr;
   gap: 0px 0px;
+  align-items: center;
+  justify-content: center;
   grid-auto-flow: row;
   grid-template-areas:
     "Button Button Button"
@@ -62,7 +66,7 @@ html, body, .container {
 }
 
 .results {  
-
+  height: 90%;
   background-color: #ffcad4;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -93,7 +97,7 @@ html, body, .container {
 
 
 .playerInput {  
-
+  height: 90%;
   background-color: #ffafcc;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -118,6 +122,7 @@ html, body, .container {
 
 
 .numbers {  
+  height: 90%;
   background-color: #ffcad4;
   text-align: center;
   font-size: xx-large;

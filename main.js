@@ -36,8 +36,13 @@ init();//invoke init function to start the game
 //I try to not hardcode stuff, but the board -hence the number of max guesses- is hardcoded here. I will deal with this later if I'm done early.
 // OR, can I create the board like this : board [ [] * maxGuess + 1 ]? 
 function init(){
+  // Reset all state variables to their initial value.
+
+  // remove the html data from circles
   allCircles.forEach(circle => circle.innerHTML = '');
-  allDiamonds.forEach(circle => circle.style.borderBottomColor = '#f0f0f0');
+  //remove the color from the diamond class
+  allDiamonds.forEach(diamond => diamond.style.borderBottomColor = '#f0f0f0');
+
   infoEl.innerHTML = 'CANDY MACHINE IS BROKEN!! CAN YOU GUESS THE SECRET CODE TO TURN IT OFF AND ON AGAIN?'
   winner = false;
   secretCode = [];
@@ -47,7 +52,8 @@ function init(){
   continuePlaying = true;
   usedNumbers = [];
   generateSecretCode();
-  render();
+  renderBoard();
+  renderInformation();
 }
 
 function handleGuess(event){
