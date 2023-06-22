@@ -22,6 +22,7 @@ const infoEl = document.querySelector('.information');
 const playAgainBtn = document.querySelector('.button');
 const allCircles = document.querySelectorAll('.circle');
 const allDiamonds = document.querySelectorAll('.diamond');
+const mistakeEl = document.querySelector('.deleteButton');
 
 /*----- event listeners -----*/
 //An event listener for play again button to restart the game with init() function
@@ -29,6 +30,10 @@ playAgainBtn.addEventListener('click', init); //provide the function, do not inv
 
 //Add event listener to get player guess
 guessEl.addEventListener('click', handleGuess);
+
+//Add event listener to delete last move
+mistakeEl.addEventListener('click', handleMistake);
+
 
 /*----- functions -----*/
 init();//invoke init function to start the game
@@ -191,4 +196,16 @@ function renderDiamonds() {
   for (let j=matchesInPlace; j<(matchesNotInPlace+matchesInPlace); j++) {
     document.getElementById(`c${j}r${numGuesses}`).style.borderBottomColor = 'magenta';
   }
+}
+
+function handleMistake(){
+  // handle mistake function should
+  //delete the last pushed number from usedNumbers
+  usedNumbers.pop()
+  // delete the last number from the board
+  let lastGuessIdx = `guess${numGuesses}${guessCount-1}` //get ID of last number
+  document.getElementById(lastGuessIdx).innerText = '';
+
+  // remove 1 from guessCount
+  guessCount--; 
 }
