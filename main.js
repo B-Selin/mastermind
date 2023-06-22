@@ -20,7 +20,8 @@ let usedNumbers; //empty array to keep track of playerGuess, to prevent selectin
 const guessEl = document.querySelector('.numbers');
 const infoEl = document.querySelector('.information');
 const playAgainBtn = document.querySelector('.button');
-
+const allCircles = document.querySelectorAll('.circle');
+const allDiamonds = document.querySelectorAll('.diamond');
 
 /*----- event listeners -----*/
 //An event listener for play again button to restart the game with init() function
@@ -35,8 +36,13 @@ init();//invoke init function to start the game
 //I try to not hardcode stuff, but the board -hence the number of max guesses- is hardcoded here. I will deal with this later if I'm done early.
 // OR, can I create the board like this : board [ [] * maxGuess + 1 ]? 
 function init(){
+  allCircles.forEach(circle => circle.innerHTML = '');
+  allDiamonds.forEach(circle => circle.style.borderBottomColor = '#f0f0f0');
+  infoEl.innerHTML = 'CANDY MACHINE IS BROKEN!! CAN YOU GUESS THE SECRET CODE TO TURN IT OFF AND ON AGAIN?'
   winner = false;
+  secretCode = [];
   numGuesses = 0;
+  playerGuess = '';
   guessCount = 0;
   continuePlaying = true;
   usedNumbers = [];
@@ -53,7 +59,7 @@ function handleGuess(event){
     //had to push as integer, otherwise checkPlayerGuess function does not work comparing an int and str
     usedNumbers.push(parseInt(playerGuess));
     //increase the guessCount
-    render();
+    renderBoard();
     guessCount +=1;
     // when guess count is 3 or usedNumber.length reaches secretCodeLength, reset the guessCount and increase numGuesses
     if(usedNumbers.length === secretCodeLength){
@@ -107,7 +113,7 @@ function checkPlayerGuess(){
     }
   }
 
-  console.log(matchesNotInPlace, matchesInPlace);
+  // console.log(matchesNotInPlace, matchesInPlace);
   
   //Check if player has won 
   if (matchesInPlace === secretCodeLength){
@@ -120,6 +126,7 @@ function checkPlayerGuess(){
       continuePlaying = false;
   }
   renderInformation() //honestly I couldnt find a way to change the info board
+  renderDiamonds() // smae reason lol
 }
 
 function getWinner(){
@@ -135,16 +142,15 @@ function getWinner(){
 function render(){
   renderBoard();
   renderInformation();
-  //renderDiamonds();
-  
+  renderDiamonds();
 }
 
 function renderBoard(){
   // define a guessIdx element and assign it to the last played numGuesses and guessCount
   if(playerGuess){
     let guessIdx = `guess${numGuesses}${guessCount}`;
-    console.log(playerGuess);
-    console.log(guessIdx);
+    // console.log(playerGuess);
+    // console.log(guessIdx);
     // get the element with the id of guessIdx from the html and assign its innerText to playerGuess
     document.getElementById(guessIdx).innerText = playerGuess;
   }
@@ -161,7 +167,22 @@ function renderInformation(){
   if(winner) infoEl.innerText = 'You Cracked the Code!';    
 
   // if continuePlaying is false, player ran out of guesses
-  else if(!continuePlaying) infoEl.innerText = 'You Ran Out Of Guesses';
-  
+  else if(!continuePlaying) {
+    infoEl.innerText = 'YOU RAN OUT OF GUESSES';
+    playAgainBtn.innerText = 'Play Again?';
+  };
 }
 
+function renderDiamonds() {
+  //according to the number of matchesInPlace and matchesNotInPlace, color of the class diamond elements should change
+  // console.log(matchesInPlace, matchesNotInPlace)
+
+  for (let i=0; i<matchesInPlace; i++) {
+    document.getElementById(`c${i}r${numGuesses}`).style.borderBottomColor = 'purple';
+
+
+  }
+  for (let j=matchesInPlace; j<(matchesNotInPlace+matchesInPlace); j++) {
+    document.getElementById(`c${j}r${numGuesses}`).style.borderBottomColor = 'magenta';
+  }
+}
