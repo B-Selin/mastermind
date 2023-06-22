@@ -2,7 +2,7 @@
 html, body {
   height: 90%;
 
-  margin: 0;
+  margin: 1% 10%;
   font-family: 'Indie Flower', cursive;
   font-weight:bolder;
   color: #4f000b;
@@ -66,19 +66,19 @@ html, body {
 }
 
 .results {  
-  height: 90%;
+  height: 100%;
   background-color: #ffcad4;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
-  gap: 0.7em 0.1em;
+
   grid-auto-flow: row;
   justify-content: center;
   align-content: space-around;
   justify-items: center;
   align-items: center;
-  box-shadow:inset 2px 2px 2px 2px rgba(255,255,255,.5);
+
   grid-template-areas:
     "c2r5 c3r5"
     "c0r5 c1r5"
@@ -97,7 +97,7 @@ html, body {
 
 
 .playerInput {  
-  height: 90%;
+  height: 100%;
   background-color: #ffafcc;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -122,10 +122,10 @@ html, body {
 
 
 .numbers {  
-  height: 90%;
+  height: 100%;
   background-color: #ffcad4;
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;

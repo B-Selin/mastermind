@@ -174,7 +174,7 @@ function renderInformation(){
 
   // if continuePlaying is false, player ran out of guesses
   else if(!continuePlaying) {
-    infoEl.innerText = 'YOU RAN OUT OF GUESSES';
+    infoEl.innerText = `YOU RAN OUT OF GUESSES!! Secret Code Was ${secretCode}`;
     playAgainBtn.innerText = 'Play Again?';
   };
 }
