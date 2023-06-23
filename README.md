@@ -1,25 +1,26 @@
-<p align="center">
-Mastermind
-</p>
+
+# Mastermind
+
 
 
 
 This is a JavaScript implementation of the Mastermind code-breaking game.
 
-<p align=”center”>
 
-<img width=”200" height=”200" src=”assets/Beginning Screen.png" alt=”Game Screen”>
+<img src="assets/Beginning Screen.png"
+     alt="Home Screen"
+     style="width:40%; height:20%; margin-right: 10px; align: center" />
 
-</p>
 
 
 ## Technologies
-![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) 
+
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![VsCode](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) 
 ![CodyAI]()
 
 
@@ -32,11 +33,9 @@ Purple diamonds indicate digits that are correct and in the correct position.
 Magenta diamonds indicate digits that are in the secret code but in the wrong position.
 The player has 6 guesses to crack the secret code. If the code is cracked, a "You win!" message is displayed. If the player runs out of guesses, the secret code is revealed.
 
-<p align=”center”>
-
-<img width=”200" height=”200" src=”assets/Game screen.png" alt=”How to play”>
-
-</p>
+<img src="assets/Game screen.png"
+     alt="How to play"
+     style="width:40%; height:20%; margin-right: 10px; align: center" />
 
 
 The player can click "Start Over" to generate a new secret code and play again.
