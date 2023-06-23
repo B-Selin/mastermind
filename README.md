@@ -1,7 +1,20 @@
+<p align="center">
 # mastermind
-Mastermind game 
+</p>
+
+
 
 This is a JavaScript implementation of the Mastermind code-breaking game.
+
+![Game Screen](assets/Beginning Screen.png)
+## Technologies
+![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![VsCode](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![CodyAI]()
 
 
 ## How to Play
@@ -12,6 +25,8 @@ This is a JavaScript implementation of the Mastermind code-breaking game.
 Purple diamonds indicate digits that are correct and in the correct position.
 Magenta diamonds indicate digits that are in the secret code but in the wrong position.
 The player has 6 guesses to crack the secret code. If the code is cracked, a "You win!" message is displayed. If the player runs out of guesses, the secret code is revealed.
+
+![Game Screen](assets/Game screen.png)
 
 The player can click "Start Over" to generate a new secret code and play again.
 
@@ -25,7 +40,7 @@ The player can click "Start Over" to generate a new secret code and play again.
 ## Live Link
 
 Game can be played in here
-https://b-selin.github.io/mastermind/
+[Mastermind by Selin](https://b-selin.github.io/mastermind)
 
 ## Code Overview
 
@@ -39,3 +54,15 @@ Functions to generate the secret code, provide feedback, check for a win, etc.
 The game logic and UI are separated into the main.js file and the HTML/CSS files.
 
 Have fun and good luck cracking the code! Let me know if you have any questions.  
+
+
+## Future Improvements
+
+- Show a 'hint' after 3 incorrect guesses
+- Allow the player to customize the number of guesses
+- Include an 'expert mode' with longer secret codes
+
+
+### Contact Me
+For any questions or suggestions, feel free to reach out via:
+- LinkedIn : [Selin LeBlanc](https://www.linkedin.com/in/selin-leblanc/)

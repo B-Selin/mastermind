@@ -71,7 +71,7 @@ function handleGuess(event){
     //push it in the array
     usedNumbers.push(parseInt(playerGuess));
     renderBoard();
-    
+
     // increase guessCount, so we know which column should store the guess
     guessCount +=1;
     // when guess count is 3 or usedNumber.length reaches secretCodeLength, reset the guessCount and increase numGuesses
@@ -157,14 +157,14 @@ function renderInformation(){
     /*change the information on the board to match the outcome of matchesInPlace and matchesNotInPlace. 
     Your code has "matchesInthePlace" correct digits in the right place and 
     "matchesNotinPlace" correct digits in the wrong place.*/
-    infoEl.innerHTML = `${matchesInPlace} digits are at home! ${matchesNotInPlace} digits are on their way!!`;
+    infoEl.innerHTML = `${matchesInPlace} digits are at home! <br>${matchesNotInPlace} digits are on their way!!`;
   }
   //if winner than return you cracked the code!!
   if(winner) infoEl.innerText = 'You Cracked the Code!';    
 
   // if continuePlaying is false, player ran out of guesses
   else if(!continuePlaying) {
-    infoEl.innerText = `YOU RAN OUT OF GUESSES!! Secret Code Was ${secretCode}`;
+    infoEl.innerText = `YOU RAN OUT OF GUESSES!! <br>Secret Code Was ${secretCode}`;
     playAgainBtn.innerText = 'Play Again?';
   };
 }
