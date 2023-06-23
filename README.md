@@ -20,8 +20,7 @@ This is a JavaScript implementation of the Mastermind code-breaking game.
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 ![VsCode](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) 
-![CodyAI]()
+<img src = "https://storage.googleapis.com/sourcegraph-assets/cody/20230417/logomark-default-text-black.png" width=10% height=10%>
 
 
 ## How to Play
