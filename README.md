@@ -1,12 +1,18 @@
 <p align="center">
-# mastermind
+Mastermind
 </p>
 
 
 
 This is a JavaScript implementation of the Mastermind code-breaking game.
 
-![Game Screen](assets/Beginning Screen.png)
+<p align=”center”>
+
+<img width=”200" height=”200" src=”assets/Beginning Screen.png" alt=”Game Screen”>
+
+</p>
+
+
 ## Technologies
 ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white) 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -26,7 +32,12 @@ Purple diamonds indicate digits that are correct and in the correct position.
 Magenta diamonds indicate digits that are in the secret code but in the wrong position.
 The player has 6 guesses to crack the secret code. If the code is cracked, a "You win!" message is displayed. If the player runs out of guesses, the secret code is revealed.
 
-![Game Screen](assets/Game screen.png)
+<p align=”center”>
+
+<img width=”200" height=”200" src=”assets/Game screen.png" alt=”How to play”>
+
+</p>
+
 
 The player can click "Start Over" to generate a new secret code and play again.
 
