@@ -43,7 +43,7 @@ The player can click "Start Over" to generate a new secret code and play again.
 * The secret code contains 4 unique digits between 0 and 9.
 * Guesses must also contain 4 digits between 0 and 9.
 * The same digit cannot appear more than once in a guess.
-* Feedback is provided after each guess using green and yellow circles.
+* Feedback is provided after each guess using Purple and MAgenta diamonds.
 * The player has 6 guesses to crack the code before losing.
 
 ## Live Link
@@ -67,6 +67,7 @@ Have fun and good luck cracking the code! Let me know if you have any questions.
 
 ## Future Improvements
 
+- Make the screen more responsive.
 - Show a 'hint' after 3 incorrect guesses
 - Allow the player to customize the number of guesses
 - Include an 'expert mode' with longer secret codes
