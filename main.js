@@ -160,12 +160,12 @@ function renderInformation(){
     infoEl.innerHTML = `${matchesInPlace} digits are at home! <br>${matchesNotInPlace} digits are on their way!!`;
   }
   //if winner than return you cracked the code!!
-  if(winner) infoEl.innerText = 'You Cracked the Code!';    
+  if(winner) infoEl.innerHTML = 'You Cracked the Code!';    
 
   // if continuePlaying is false, player ran out of guesses
   else if(!continuePlaying) {
-    infoEl.innerText = `YOU RAN OUT OF GUESSES!! <br>Secret Code Was ${secretCode}`;
-    playAgainBtn.innerText = 'Play Again?';
+    infoEl.innerHTML = `YOU RAN OUT OF GUESSES!! <br>Secret Code Was ${secretCode}`;
+    playAgainBtn.innerHTML = 'Play Again?';
   };
 }
 
